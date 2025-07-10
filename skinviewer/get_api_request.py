@@ -6,26 +6,30 @@ def get_uuid(playername):
     base_url = "https://api.minecraftservices.com/minecraft/profile/lookup/name/"
     response = requests.get(base_url + playername)
     data = response.json()
+
     if "id" in data:
         uuid = data["id"]
         return uuid
     else:
-        print(f"[WARN] No player with name '{playername}' found.")
+        print(f"[WARN] No player '{playername}' found.")
+        return f"No player '{playername}' found."
 
-def get_skin_url(uuid):
+def get_skin_data(uuid):
     base_url = "https://sessionserver.mojang.com/session/minecraft/profile/"
     response = requests.get(base_url + uuid)
     data = response.json()
     value_encoded = data["properties"][0]["value"]
     value_decoded = base64.b64decode(value_encoded)
     skin_url = json.loads(value_decoded)["textures"]["SKIN"]["url"]
-    return skin_url
+    response = requests.get(skin_url)
+    skin_binary_data = response.content 
+    return skin_binary_data
 
-def get_image_url(uuid = "33e10a68a14e49acafa84d67399a4bff", yaw = 0, shadow = True, cape = True, helmet = True, overlay = True):
+def get_image_url(uuid, yaw, shadow, cape, helmet, overlay):
     base_url = "https://vzge.me/full"
     size = 832
     
-    image_url = (f"{base_url}/{size}/{uuid}?y={yaw}&no=ears,")
+    image_url = (f"{base_url}/{size}/{uuid}?y={yaw - 20}&no=ears,")
     
     if shadow == False:
         image_url += "shadow,"
