@@ -1,6 +1,10 @@
 import get_api_request as api
 import streamlit as st
 
+st.set_page_config(page_title="NM-Skinviewer", page_icon=":art:", layout="centered", initial_sidebar_state=None, menu_items=None)
+
+
+
 st.title("MC Skinviewer by :blue[Niklas Maroldt]", anchor=None, help=None, width="stretch")
 
 playername = st.text_input("label", value="Redstone31v", max_chars=16, key=None, type="default", help=None, autocomplete=None, on_change=None, args=None, kwargs=None, placeholder="Search minecraft gamertag:", disabled=False, label_visibility="hidden", icon=None, width="stretch")
