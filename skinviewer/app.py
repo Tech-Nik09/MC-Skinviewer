@@ -7,9 +7,9 @@ st.set_page_config(page_title="NM-Skinviewer", page_icon=":art:", layout="center
 
 st.title("MC Skinviewer by :blue[Niklas Maroldt]", anchor=None, help=None, width="stretch")
 
-playername = st.text_input("label", value="Redstone31v", max_chars=16, key=None, type="default", help=None, autocomplete=None, on_change=None, args=None, kwargs=None, placeholder="Search minecraft gamertag:", disabled=False, label_visibility="hidden", icon=None, width="stretch")
+playername = st.text_input("label", value="notch", max_chars=16, key=None, type="default", help=None, autocomplete=None, on_change=None, args=None, kwargs=None, placeholder="Search minecraft gamertag:", disabled=False, label_visibility="hidden", icon=None, width="stretch")
 if playername == "":
-    playername = "Redstone31v"
+    playername = "notch"
     print("[INFO] No playername specified. Set playername to default.")
 uuid = api.get_uuid(playername)
 
