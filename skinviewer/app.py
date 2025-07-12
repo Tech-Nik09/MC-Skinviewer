@@ -20,7 +20,7 @@ elif user_input == "":
     uuid = "069a79f444e94726a5befca90e38aaf5"
     playername = "Notch"
 else:
-    st.error("Please enter valid username!")
+    st.error("Please enter a valid username!")
     uuid = "069a79f444e94726a5befca90e38aaf5"
     playername = "Notch"
 
@@ -63,6 +63,7 @@ with col2:
         """,
         unsafe_allow_html=True
     )    
+    st.badge("Rendering powered by VZGE (SurgePlay Visage)", icon=":material/electric_bolt:", color="green", width="content")
 
 
 with st.container(height=None, border=True, key=None):
