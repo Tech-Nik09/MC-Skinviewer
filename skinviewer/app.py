@@ -3,9 +3,12 @@ import streamlit as st
 
 st.set_page_config(page_title="NM-Skinviewer", page_icon=":art:", layout="wide", initial_sidebar_state=None, menu_items=None)
 
-
-
-st.title("MC Skinviewer by :blue[Niklas Maroldt]", anchor=None, help=None, width="stretch")
+st.markdown(
+        f"""
+        <p style='text-align: center; font-family: "Arial"; font-size: 50px; font-weight: bold;'>MC Skinviewer by Niklas Maroldt</p>
+        """,
+        unsafe_allow_html=True
+)
 
 playername = st.text_input("label", value="notch", max_chars=16, key=None, type="default", help=None, autocomplete=None, on_change=None, args=None, kwargs=None, placeholder="Search minecraft gamertag:", disabled=False, label_visibility="hidden", icon=None, width="stretch")
 if playername == "":
@@ -38,7 +41,7 @@ with col1:
     image_cape = st.toggle("Cape visibility", value=True, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible", width="content")
     image_helmet = st.toggle("Head: second layer", value=True, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible", width="content")
     image_overlay = st.toggle("Body: second layer", value=True, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible", width="content")
-    image_yaw = st.slider("Skin rotation", min_value=0, max_value=360, value=0, step=10, format=None, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible", width="stretch")
+    image_yaw = st.slider("Skin rotation", min_value=0, max_value=360, value=0, step=30, format=None, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible", width="stretch")
 
 with col2:
     image_url = api.get_image_url(uuid, yaw=image_yaw, shadow=image_shadow, cape=image_cape, helmet=image_helmet, overlay=image_overlay)
