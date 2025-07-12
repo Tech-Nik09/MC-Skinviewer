@@ -10,11 +10,19 @@ st.markdown(
         unsafe_allow_html=True
 )
 
-playername = st.text_input("label", value="notch", max_chars=16, key=None, type="default", help=None, autocomplete=None, on_change=None, args=None, kwargs=None, placeholder="Search minecraft gamertag:", disabled=False, label_visibility="hidden", icon=None, width="stretch")
-if playername == "":
-    playername = "notch"
-    print("[INFO] No playername specified. Set playername to default.")
-uuid = api.get_uuid(playername)
+
+user_input = st.text_input("label", value="", max_chars=16, key=None, type="default", help=None, autocomplete=None, on_change=None, args=None, kwargs=None, placeholder="Search minecraft gamertag:", disabled=False, label_visibility="hidden", icon=None, width="stretch")
+player_info = api.get_player_information(user_input)
+if "id" in player_info:
+    uuid = player_info["id"]
+    playername = player_info["name"]
+elif user_input == "":
+    uuid = "069a79f444e94726a5befca90e38aaf5"
+    playername = "Notch"
+else:
+    st.error("Please enter valid username!")
+    uuid = "069a79f444e94726a5befca90e38aaf5"
+    playername = "Notch"
 
 
 with st.container(height=None, border=True, key=None):
@@ -48,7 +56,7 @@ with col2:
     st.markdown(
         f"""
         <div style='text-align: center;'>
-            <p style='font-family: "Arial"; font-size: 40px; font-weight: bold;'>Player</p>
+            <p style='font-family: "Arial"; font-size: 40px; font-weight: bold;'>{playername}</p>
             <hr>
             <img src='{image_url}'>
         </div>

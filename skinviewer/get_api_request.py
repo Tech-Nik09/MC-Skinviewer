@@ -3,17 +3,11 @@ import json
 import base64
 
 
-def get_uuid(playername):
+def get_player_information(user_input):
     base_url = "https://api.minecraftservices.com/minecraft/profile/lookup/name/"
-    response = requests.get(base_url + playername)
+    response = requests.get(base_url + user_input)
     data = response.json()
-
-    if "id" in data:
-        uuid = data["id"]
-        return uuid
-    else:
-        print(f"[WARN] No player '{playername}' found.")
-        return f"No player '{playername}' found."
+    return data
 
 def get_skin_data(uuid):
     base_url = "https://sessionserver.mojang.com/session/minecraft/profile/"
