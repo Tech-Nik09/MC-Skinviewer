@@ -38,17 +38,16 @@ Here you can find everything about how to install and run the app at your own sy
 python --version
 ```
 ### 2. Clone the repository:
-* Create a new directory (for example `mc-skinviewer`) on your machine.
-* Run the following command inside the new directory to clone the repository.
+* Run the following command to clone the repository to the current directory of your local machine.
 ```
 git clone https://github.com/Tech-Nik09/MC-Skinviewer.git
 ```
 ### 3. Create a virtuel environment (venv) inside the new directory:
-* Run the following command inside your `mc-skinviewer` directory to create a new venv.
+* Run the following command inside the local repository `MC-Skinviewer` to create a new venv.
 ```
 python -m venv .venv
 ```
-* Then start the venv by executing the "activate" file (`mc-skinviewer/.venv/Scripts/activate`).
+* Then start the venv by executing the "activate" file (`MC-Skinviewer/.venv/Scripts/activate`).
 * Also see [THIS](https://docs.python.org/3/library/venv.html) documentation for help.
 ### 4. Install all required Python packages:
 * Install all required packages from the `requirements.txt` file by running this command.
