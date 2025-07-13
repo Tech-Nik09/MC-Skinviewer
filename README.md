@@ -4,14 +4,14 @@
 
 ## About this project
 This is the repository for my minecraft skinviewer project.  
-My Skinviewer app is a clean and easy to use  web-application which I made with just a few lines of [Python](https://www.python.org/) code and [Streamlit](https://streamlit.io/). After entering a valid minecraft gamertag, the app shows you the player's UUID and skin. By using the elements in the properties section you are able to:
+My Skinviewer app is a clean and easy to use  web-application which I made with just a few lines of [Python](https://www.python.org/) code and [Streamlit](https://streamlit.io/). After entering a valid minecraft gamertag, the app shows you the player's UUID and skin. By using the elements in the "Properties" section you are able to:
 1. toggle the shadow casted by the player.
 2. toggle the visibility of the player's cape.
 3. toggle whether the second layer of the head should be shown.
 4. toggle whether the second layer of the body should be shown.
 5. rotate the skin to view it from a different perspective.
 
-You can also downlad the player's skin as a [64 x 64 px PNG image](https://de.minecraft.wiki/w/Skin#Overlays) to use it in minecraft.
+You can also download the player's skin as a [64 x 64 px PNG image](https://de.minecraft.wiki/w/Skin#Overlays) to use it in minecraft.
 
 
 
@@ -23,8 +23,8 @@ You can use the following links to open the app or to visit my Streamlit profile
 
 
 ## How does the app work?
-Basically the app works by requesting information about the player (UUID and skin image) from the [public mojang api](https://minecraft.wiki/w/Mojang_API).
-To show the preview of the skin I decided to use the  [VZGE (SurgePlay Visage)](https://vzge.me/) API. Everytime you enter another gamertag or change on of the settings in the "Properties" section, a new request is send to  VZGE. After recieving the API response form VZGE the image changes in the app.
+Basically the app works by requesting information about the player (UUID and skin image) from the [public Mojang API](https://minecraft.wiki/w/Mojang_API).
+To show the preview of the skin I decided to use the  [VZGE (SurgePlay Visage) API](https://vzge.me/). Everytime you enter another gamertag or change on of the settings in the "Properties" section, a new request is send to  VZGE. After recieving the API response form VZGE the image changes in the app.
 
 
 
@@ -66,8 +66,8 @@ streamlit run ./skinviewer/app.py
 
 
 ## Important / Notice
-* Please do not spam rendering requests to the VZGE API  
+* Please do not spam rendering requests to the VZGE API.  
 On thier website they say:
 > I run VZGE for free! Please be respectful of that. If you're bulk-requesting renders, wait at least a second between subsequent requests.
 * If you encounter any bugs please open an issue and report it.
-* Feel also free to let me know your ideas about how i could improve the skinviewer app. (Please use the "discussion" section of this repository.)
+* Feel also free to let me know your ideas about how I could improve the skinviewer app. (Please use the "discussion" section of this repository.)
