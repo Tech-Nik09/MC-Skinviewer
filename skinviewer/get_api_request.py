@@ -26,7 +26,7 @@ def get_image_url(uuid, yaw, shadow, cape, helmet, overlay):
     base_url = "https://vzge.me/full"
     size = 832
     
-    image_url = (f"{base_url}/{size}/{uuid}?y={yaw - 20}&no=ears,")
+    image_url = (f"{base_url}/{size}/{uuid}.png?y={yaw - 20}&no=ears,")
     if shadow == False:
         image_url += "shadow,"
     if cape == False:
