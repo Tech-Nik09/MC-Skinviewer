@@ -49,12 +49,32 @@ python -m venv .venv
 ```
 * Then start the venv by executing the "activate" file (`MC-Skinviewer/.venv/Scripts/activate`).
 * Also see [THIS](https://docs.python.org/3/library/venv.html) documentation for help.
+* If you are using bash, you could run this command.
+```bash
+source ./.venv/Scripts/activate
+```
 ### 4. Install all required Python packages:
 * Install all required packages from the `requirements.txt` file by running this command.
 ```
 pip install -r requirements.txt
 ```
-### 5. Execute the application.
+### 5. Configure User-Agent header for [VZGE (SurgePlay Visage) API](https://vzge.me/)
+* *Notice: The VZGE API now requires to use a custom User-Agent header. Otherwise all requests will fail with a 400 error. On thier website they say:*
+> If your VZGE client is not using a custom UA, all requests to VZGE will now fail with a 400 error, returning a short explanatory text. You must ensure you use a reasonable User-Agent header in all requests to VZGE, preferably including a link to your website and your email address should you need to be contacted if you are misusing VZGE. An example of such a UA is MyProgramName/2.0 (+https://my.website/myprogramname.html; <me@my.website>).
+* To set up your User-Agent you have to create a `secrets.toml` file inside the `.streamlit` directory.
+* You can do it manually by pasting the following text into the `secrets.toml` file. Or by running the command given below.
+* Please make sure to replace the URL and email address with your own!
+
+Content of `secrets.toml`:
+```toml
+[VZGE]
+user_agent = "MyProgramName/2.0 (+https://my.website/myprogramname.html; <me@my.website>)"
+```
+Bash command to create the `secrets.toml` file with its content
+```bash
+echo -e '[VZGE]\nuser_agent = "MyProgramName/2.0 (+https://my.website/myprogramname.html; <me@my.website>)"' > ./.streamlit/secrets.toml
+```
+### 6. Execute the application.
 * *Notice: Every time before executing the app make sure that the venv is active!*
 * Run the app with this command.
 ```
