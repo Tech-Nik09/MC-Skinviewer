@@ -43,13 +43,13 @@ python --version
 git clone https://github.com/Tech-Nik09/MC-Skinviewer.git
 ```
 ### 3. Create a virtuel environment (venv) inside the new directory:
-* Run the following command inside the local repository `MC-Skinviewer` to create a new venv.
+* *Notice: Run all following commands inside the local repository `./MC-Skinviewer`*
+* Run this command to create a new venv.
 ```
 python -m venv .venv
 ```
-* Then start the venv by executing the "activate" file (`MC-Skinviewer/.venv/Scripts/activate`).
-* Also see [THIS](https://docs.python.org/3/library/venv.html) documentation for help.
-* If you are using bash, you could run this command.
+* Then start the venv by executing the "activate" file (`./.venv/Scripts/activate`).
+* If you are using bash, you could run this command. Otherwise see [THIS](https://docs.python.org/3/library/venv.html) documentation for help.
 ```bash
 source ./.venv/Scripts/activate
 ```
@@ -63,7 +63,7 @@ pip install -r requirements.txt
 > If your VZGE client is not using a custom UA, all requests to VZGE will now fail with a 400 error, returning a short explanatory text. You must ensure you use a reasonable User-Agent header in all requests to VZGE, preferably including a link to your website and your email address should you need to be contacted if you are misusing VZGE. An example of such a UA is MyProgramName/2.0 (+https://my.website/myprogramname.html; <me@my.website>).
 * To set up your User-Agent you have to create a `secrets.toml` file inside the `.streamlit` directory.
 * You can do it manually by pasting the following text into the `secrets.toml` file. Or by running the command given below.
-* Please make sure to replace the URL and email address with your own!
+* Please make sure to replace the URL and email address with your own.
 
 Content of `secrets.toml`:
 ```toml
