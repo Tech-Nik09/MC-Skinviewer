@@ -11,7 +11,7 @@ My Skinviewer app is a clean and easy to use  web-application which I made with 
 4. toggle whether the second layer of the body should be shown.
 5. rotate the skin to view it from a different perspective.
 
-You can also download the player's skin as a [64 x 64 px PNG image](https://de.minecraft.wiki/w/Skin#Overlays) to use it in minecraft.
+You can download the player's skin as a [64 x 64 px PNG image](https://de.minecraft.wiki/w/Skin#Overlays) to use it in minecraft. Additionally you can also downlad the current skin preview as a PNG image.
 
 
 

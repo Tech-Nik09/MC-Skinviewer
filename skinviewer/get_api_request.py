@@ -1,6 +1,7 @@
 import requests
 import json
 import base64
+import streamlit as st
 
 
 def get_player_information(user_input):
@@ -37,3 +38,8 @@ def get_image_url(uuid, yaw, shadow, cape, helmet, overlay):
         image_url += "overlay,"
     
     return image_url
+
+def get_preview_image(image_url):
+    response = requests.get(image_url, headers={"user-agent": st.secrets["VZGE"]["user_agent"]})
+    preview_binary_data = response.content
+    return preview_binary_data

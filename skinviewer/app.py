@@ -1,5 +1,6 @@
 import get_api_request as api
 import streamlit as st
+import requests
 
 st.set_page_config(page_title="NM-Skinviewer", page_icon=":art:", layout="wide", initial_sidebar_state=None, menu_items=None)
 
@@ -69,9 +70,11 @@ with col2:
 with st.container(height=None, border=True, key=None):
     st.markdown(
         f"""
-        <p style='text-align: center; font-family: "Arial"; font-size: 40px; font-weight: bold;'>Download</p>
+        <p style='text-align: center; font-family: "Arial"; font-size: 40px; font-weight: bold;'>Downloads</p>
         """,
         unsafe_allow_html=True
     )
     skin_binary_data = api.get_skin_data(uuid)
-    st.download_button(f"Download current skin of {playername}", skin_binary_data, file_name=f"{playername}_skin.png", mime="image/png", key=None, help=None, on_click="rerun", args=None, kwargs=None, type="primary", icon=None, disabled=False, use_container_width=True)
+    st.download_button(f"Download skin of {playername}", skin_binary_data, file_name=f"{playername}_skin.png", mime="image/png", key=None, help=None, on_click="ignore", args=None, kwargs=None, type="primary", icon=None, disabled=False, use_container_width=True)
+    preview_binary_data = api.get_preview_image(image_url)
+    st.download_button(f"Download preview image", preview_binary_data, file_name=f"{playername}_preview.png", mime="image/png", key=None, help=None, on_click="ignore", args=None, kwargs=None, type="primary", icon=None, disabled=False, use_container_width=True)
