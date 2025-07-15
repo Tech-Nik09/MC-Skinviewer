@@ -26,16 +26,6 @@ else:
     playername = "Notch"
 
 
-with st.container(height=None, border=True, key=None):
-    st.markdown(
-        f"""
-        <p style='text-align: center; font-family: "Arial"; font-size: 40px; font-weight: bold;'>UUID</p>
-        <p style='text-align: center; font-family: "Arial"; font-size: 30px; font-weight: bold; font-style: italic;'>{uuid}</p>
-        """,
-        unsafe_allow_html=True
-    )
-
-
 col1, col2 = st.columns([0.3, 0.7],gap="small", vertical_alignment="top", border=True)
 
 with col1:
@@ -65,6 +55,16 @@ with col2:
         unsafe_allow_html=True
     )    
     st.badge("Rendering powered by VZGE (SurgePlay Visage)", icon=":material/electric_bolt:", color="green", width="content")
+
+
+with st.container(height=None, border=True, key=None):
+    st.markdown(
+        f"""
+        <p style='text-align: center; font-family: "Arial"; font-size: 40px; font-weight: bold;'>UUID</p>
+        <p style='text-align: center; font-family: "Arial"; font-size: 30px; font-weight: bold; font-style: italic;'>{uuid}</p>
+        """,
+        unsafe_allow_html=True
+    )
 
 
 with st.container(height=None, border=True, key=None):
